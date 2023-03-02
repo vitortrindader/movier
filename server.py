@@ -9,8 +9,12 @@ app = Flask(__name__)
 @app.route('/pesquisar/<string:nome>',methods=['GET'])
 def recomendaFilme(nome):
     df = find_similar_movies(nome)
-    json_data = df.to_json()
-    return (json_data)
+    json_data = df.values.tolist()
+
+    response = jsonify(json_data)
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return (response)
        
 
 app.run(port=5000,host='localhost',debug=True)
+

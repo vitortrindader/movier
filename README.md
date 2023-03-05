@@ -5,6 +5,7 @@
 Here are the technologies used in this project
 
 ##Front-end
+-
 - React.js 18.2.0
 - react-loading-skeleton 3.1.0
 - axios 1.2.4
